@@ -12,7 +12,7 @@ function void_scripts()
 	wp_enqueue_script('jquery');
 	$requirements = ['jquery'];
 
-	wp_enqueue_style('Roboto', "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+	wp_enqueue_style('Inter', "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 
 	// wp_enqueue_style('slick', get_template_directory_uri() . "/assets/js/libs/slick/slick.css", array(), '1.8.1');
 	// wp_enqueue_style('slick-theme', get_template_directory_uri() . "/assets/js/libs/slick/slick-theme.css", array(), '1.8.1');
