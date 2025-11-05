@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="15" viewBox="0 0 15 15">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="15" height="15" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="icon_sidebar" data-name="icon / sidebar" d="M12.75,15H2.25A2.209,2.209,0,0,1,0,12.75V2.25A2.209,2.209,0,0,1,2.25,0h10.5A2.209,2.209,0,0,1,15,2.25v10.5A2.209,2.209,0,0,1,12.75,15ZM6,1.5v12h6.75a.71.71,0,0,0,.75-.75V2.25a.71.71,0,0,0-.75-.75Zm-3.75,0a.71.71,0,0,0-.75.75v10.5a.71.71,0,0,0,.75.75H4.5V1.5Z" transform="translate(0 0)" fill="#4b40c5"/>
+    </clipPath>
+  </defs>
+  <g id="icon_development_sidebar" data-name="icon / development / sidebar" clip-path="url(#clip-path)">
+    <path id="icon_sidebar-2" data-name="icon / sidebar" d="M12.75,15H2.25A2.209,2.209,0,0,1,0,12.75V2.25A2.209,2.209,0,0,1,2.25,0h10.5A2.209,2.209,0,0,1,15,2.25v10.5A2.209,2.209,0,0,1,12.75,15ZM6,1.5v12h6.75a.71.71,0,0,0,.75-.75V2.25a.71.71,0,0,0-.75-.75Zm-3.75,0a.71.71,0,0,0-.75.75v10.5a.71.71,0,0,0,.75.75H4.5V1.5Z" transform="translate(0 0)" fill="#4b40c5"/>
+  </g>
+</svg>

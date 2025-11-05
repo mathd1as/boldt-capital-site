@@ -1,0 +1,35 @@
+$colors: (
+	default: #8c8c8c,
+	primary: #005fdf,
+	secondary: #031227,
+	gray: #525252,
+	white: white,
+	black: black,
+);
+
+@function c($key, $tone: null) {
+	@if map-has-key($colors, $key) {
+		@if $tone==null {
+			@return map-get($colors, $key);
+		} @else {
+			@return map-get($colors, $key + "-" + $tone);
+		}
+	}
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
+@each $key, $value in $colors {
+	.color-#{"" + $key} {
+		color: $value;
+	}
+	.has-text-color.has-#{"" + $key}-color {
+		color: $value;
+	}
+	.bg-#{"" + $key} {
+		background-color: $value;
+	}
+	.has-background.has-#{"" + $key}-background-color {
+		background-color: $value;
+	}
+}

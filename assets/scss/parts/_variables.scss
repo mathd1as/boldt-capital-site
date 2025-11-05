@@ -1,0 +1,35 @@
+$fonthead: "Roboto", sans-serif;
+$font: "Roboto", sans-serif;
+
+$basesize: 16px;
+
+$weights: (
+	light: 300,
+	regular: 400,
+	normal: 400,
+	medium: 500,
+	semibold: 600,
+	bold: 700,
+	extrabold: 800,
+	black: 900,
+);
+@function w($key) {
+	@if map-has-key($weights, $key) {
+		@return map-get($weights, $key);
+	}
+	@warn "Unknown `#{$key}` in $weights.";
+	@return null;
+}
+
+@each $key, $value in $weights {
+	.fw-#{"" + $key} {
+		font-weight: $value;
+	}
+}
+
+.ff-fonthead {
+	font-family: $fonthead;
+}
+.ff-font {
+	font-family: $font;
+}

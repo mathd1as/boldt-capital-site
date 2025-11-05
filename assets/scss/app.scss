@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+// LIBS
+@import "parts/reset";
+@import "parts/hamburger/hamburgers";
+@import "bootstrap/bootstrap";
+
+// ABSTRACTS
+@import "parts/mixin";
+@import "parts/variables";
+@import "parts/palette";
+
+// BASE
+@import "parts/common";
+@import "parts/header";
+@import "parts/footer";
+
+// PARTS
+@import "parts/blocks";
+@import "parts/components";
+@import "parts/template_default";

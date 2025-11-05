@@ -1,0 +1,49 @@
+.btn {
+	text-transform: uppercase;
+	color: white;
+	background-color: c(primary);
+	border: 1px solid c(primary);
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 14px;
+	@include transition;
+	&:hover {
+		background: white;
+		color: c(primary);
+	}
+	&-primary {
+		color: inherit;
+	}
+	&-secondary {
+		background-color: white;
+		color: c(primary);
+		&:hover {
+			background-color: c(primary);
+			color: white;
+		}
+	}
+}
+
+.link-button {
+	color: inherit;
+}
+
+.title {
+	font-weight: w(black);
+	font-size: 40px;
+	line-height: 1.2;
+	margin-bottom: 0.75em;
+	@include media-breakpoint-down(md) {
+		font-size: 28px;
+	}
+}
+.subtitle {
+	font-size: 28px;
+	font-weight: bold;
+	color: c(primary);
+	line-height: 1.2;
+}
+
+.text {
+	font-size: clamp(16px, 1.45vw, 24px);
+}
