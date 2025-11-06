@@ -64,6 +64,18 @@
           </div>
         </div>
       </section>
+      <section class="sectors">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <h2><?php the_field('sector_title');?></h2>
+              <p class="sector-desription"><?php the_field('sector_description');?></p>
+            </div>
+            <div class="col-lg-6 offset-lg-2">
+            <p class="sector-text"><?php the_field('sector_text');?></p>
+          </div>
+        </div>
+      </section>
     </article>
 
 	<?php endwhile; ?>
