@@ -136,6 +136,13 @@
           </div>
         </div>
       </section>
+      <section class="our-team">
+        <div class="container">
+          <h2><?php the_field('our_team_title');?></h2>
+          <p class="our-team-description"><?php the_field('our_team_subtitle');?></p>
+          <p class="our-team-text"><?php the_field('our_team_text');?></p>
+        </div>
+      </section>
     </article>
 
 	<?php endwhile; ?>
