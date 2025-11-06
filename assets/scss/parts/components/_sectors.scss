@@ -1,6 +1,7 @@
 .sectors {
   padding: 140px 0;
   background-color: #135339;
+  padding-top: 140px;
 
   h2 {
     font-size: 96px;
@@ -20,4 +21,23 @@
   font-size: 20px;
   font-weight: bold;
   color: #FFFF;
+}
+
+.sector-icon-description {
+  font-size: 16px;
+  font-weight: normal;
+  color: #FFFF;
+  line-height: 18px;
+}
+
+.sector-icon-item {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 52px;  
 }

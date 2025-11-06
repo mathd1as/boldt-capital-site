@@ -55,10 +55,10 @@
               <p class="strategy-text"><?php the_field('strategy_text');?></p>
               <p class="strategy-strong-text"><?php the_field('strategy_strong_text');?></p>
             </div>
-            <div class="col-lg-6">
+            <div class="strategy-image-wrapper col-lg-6">
               <?php 
                 $strategy_image = get_field('strategy_image');
-                echo wp_get_attachment_image($strategy_image['id'], 'full');
+                echo wp_get_attachment_image($strategy_image['id'], 'full', false, ['width' => '592', 'height' => '499']);
               ?>
             </div>
           </div>
@@ -73,6 +73,27 @@
             </div>
             <div class="col-lg-6 offset-lg-2">
             <p class="sector-text"><?php the_field('sector_text');?></p>
+          </div>
+          <div class="col-lg-12">
+            <div class="sectors-icons-wrapper d-flex flex-nowrap justify-content-between align-items-start">
+              <?php if (have_rows('sectors_icons')): ?>
+                <?php while (have_rows('sectors_icons')): the_row(); 
+                  $icon_logo = get_sub_field('sectors_icon_logo');
+                  $icon_description = get_sub_field('sectors_icon_description');
+                ?>
+                  <div class="sector-icon-item">
+                    <?php if ($icon_logo): ?>
+                      <div class="sector-icon-image-wrapper d-flex align-items-start justify-content-center" style="height: 112px;">
+                        <?php echo wp_get_attachment_image($icon_logo['id'], 'full', false, ['class' => 'sector-icon', 'width' => '112', 'height' => '112']); ?>
+                      </div>
+                    <?php endif; ?>
+                    <?php if ($icon_description): ?>
+                      <p class="sector-icon-description text-center mt-2"><?php echo esc_html($icon_description); ?></p>
+                    <?php endif; ?>
+                  </div>
+                <?php endwhile; ?>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
       </section>
