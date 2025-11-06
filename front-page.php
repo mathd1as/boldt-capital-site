@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main id="primary" class="site-main">
-
 	<?php while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <?php 
@@ -22,12 +21,13 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
-              <h2><?php the_field('hero_label');?></h2>
-              <p>teste</p>
+              <h2><?php the_field('about_us_title');?></h2>
+              <p><?php the_field('about_us_text');?></p>
             </div>
             <div class="col-lg-6">
             <?php 
-              echo wp_get_attachment_image($hero_background['id'], 'full');
+              $about_us_image = get_field('about_us_image');
+              echo wp_get_attachment_image($about_us_image['id'], 'full');
             ?>
             </div>
           </div>
