@@ -1,0 +1,27 @@
+.we-are-boldt {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  @include flexcenter;
+
+  h2 {
+    font-size: 96px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 26px;
+
+  }
+}
+
+.we-are-boldt-text {
+  font-size: 24px;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+
+.we-are-boldt-description {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}

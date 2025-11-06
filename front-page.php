@@ -5,6 +5,7 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
       <?php 
         $hero_background = get_field('hero_background');
+        $we_are_boldt_background = get_field('we_are_boldt_background');
         $hero_logo = get_field('hero_logo');
       ?>
       <section class="hero flex-column" style="background-image: url('<?php echo $hero_background['url'];?>');">
@@ -29,6 +30,36 @@
               $about_us_image = get_field('about_us_image');
               echo wp_get_attachment_image($about_us_image['id'], 'full');
             ?>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="we-are-boldt flex-column" style="background-image: url('<?php echo $we_are_boldt_background['url'];?>');">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <p class="we-are-boldt-text"><?php the_field('we_are_boldt_text');?></p>
+            </div>
+            <div class="col-lg-4">
+              <h2><?php the_field('we_are_boldt_title');?></h2>
+              <p class="we-are-boldt-description"><?php the_field('we_are_boldt_description');?></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="strategy">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2><?php the_field('strategy_title');?></h2>
+              <p class="strategy-text"><?php the_field('strategy_text');?></p>
+              <p class="strategy-strong-text"><?php the_field('strategy_strong_text');?></p>
+            </div>
+            <div class="col-lg-6">
+              <?php 
+                $strategy_image = get_field('strategy_image');
+                echo wp_get_attachment_image($strategy_image['id'], 'full');
+              ?>
             </div>
           </div>
         </div>
