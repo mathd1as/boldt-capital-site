@@ -1,0 +1,46 @@
+.our-portfolio {
+  background-color: #F2EAE8;
+
+  h2 {
+    font-size: 96px;
+    font-weight: bold;
+    color: #0E2841;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 100px;
+  }
+
+  .our-portfolio-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0E2841;
+  }
+
+  .our-portfolio-description {
+    font-size: 16px;
+    font-weight: normal;
+    color: #0E2841;
+  }
+
+  .our-portfolio-logos-wrapper {
+    margin-top: 3rem;
+  }
+
+  .portfolio-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .portfolio-logo {
+    max-width: 100%;
+    height: auto;
+  }
+}

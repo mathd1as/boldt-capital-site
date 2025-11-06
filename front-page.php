@@ -143,6 +143,34 @@
           <p class="our-team-text"><?php the_field('our_team_text');?></p>
         </div>
       </section>
+      <section class="our-portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2><?php the_field('our_portfolio_title');?></h2>
+              <p class="our-portfolio-subtitle"><?php the_field('our_portfolio_subtitle');?></p>
+              <p class="our-portfolio-description"><?php the_field('our_portfolio_description');?></p>
+            </div>
+            <div class="col-lg-12">
+              <div class="row our-portfolio-logos-wrapper">
+                <?php if (have_rows('our_portfolio_logos')): ?>
+                  <?php while (have_rows('our_portfolio_logos')): the_row(); 
+                    $logo = get_sub_field('logo');
+                  ?>
+                    <div class="col-lg-4 portfolio-logo-item">
+                      <?php if ($logo): ?>
+                        <div class="portfolio-logo-wrapper">
+                          <?php echo wp_get_attachment_image($logo['id'], 'full', false, ['class' => 'portfolio-logo']); ?>
+                        </div>
+                      <?php endif; ?>
+                    </div>
+                  <?php endwhile; ?>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
 
 	<?php endwhile; ?>
