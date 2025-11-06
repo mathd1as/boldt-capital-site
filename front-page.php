@@ -97,6 +97,45 @@
           </div>
         </div>
       </section>
+      <section class="solutions">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2><?php the_field('solutions_title');?></h2>
+              <p class="solutions-description"><?php the_field('solutions_description');?></p>
+            </div>
+            <div class="col-lg-6">
+              <div class="solutions-box-dialog-wrapper flex no">
+                <p class="solutions-box-dialog"><?php the_field('solutions_box_dialog_1');?></p>
+              </div>
+              <div class="solutions-box-dialog-wrapper flex">
+                <p class="solutions-box-dialog"><?php the_field('solutions_box_dialog_2');?></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="row solutions-icons-wrapper">
+                <?php if (have_rows('solutions_icons')): ?>
+                  <?php while (have_rows('solutions_icons')): the_row(); 
+                    $logo = get_sub_field('icon');
+                    $title = get_sub_field('title');
+                  ?>
+                    <div class="col-lg-4 solution-icon-item">
+                      <?php if ($logo): ?>
+                        <div class="solution-icon-image-wrapper">
+                          <?php echo wp_get_attachment_image($logo['id'], 'full', false, ['class' => 'solution-icon']); ?>
+                        </div>
+                      <?php endif; ?>
+                      <?php if ($title): ?>
+                        <h3 class="solutions-logo-title"><?php echo esc_html($title); ?></h3>
+                      <?php endif; ?>
+                    </div>
+                  <?php endwhile; ?>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
 
 	<?php endwhile; ?>
