@@ -172,9 +172,7 @@
         </div>
       </section>
     </article>
-
 	<?php endwhile; ?>
-
 </main>
 
 <?php
