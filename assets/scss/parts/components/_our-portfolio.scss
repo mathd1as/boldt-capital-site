@@ -1,5 +1,6 @@
 .our-portfolio {
   background-color: #F2EAE8;
+  padding-top: 99px;
 
   h2 {
     font-size: 96px;
@@ -7,12 +8,15 @@
     color: #0E2841;
     font-family: 'Montserrat', sans-serif;
     line-height: 100px;
+    white-space: nowrap;
+    margin-bottom: 34px;
   }
 
   .our-portfolio-subtitle {
     font-size: 20px;
     font-weight: bold;
     color: #0E2841;
+    margin-bottom: 34px;
   }
 
   .our-portfolio-description {
