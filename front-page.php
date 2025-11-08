@@ -186,6 +186,7 @@
                       <!-- Foto -->
                       <div class="col-md-4">
                         <?php 
+                          $linkedin_icon = get_field('modal_linkedin_icon');
                           $member_1_photo = get_field('member_1_photo');
                           if($member_1_photo):
                             echo wp_get_attachment_image($member_1_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
@@ -193,8 +194,13 @@
                         ?>
                       </div>
                       <!-- Nome -->
-                      <div class="col-md-8 d-flex align-items-center">
-                        <h3 class="team-member-name mb-0"><?php the_field('member_1_name'); ?></h3>
+                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
+                        <h3 class="team-member-name mb-2"><?php the_field('member_1_name'); ?></h3>
+                        <?php 
+                          if($linkedin_icon):
+                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
+                          endif;
+                        ?>
                       </div>
                     </div>
                     <!-- Bio -->
@@ -227,8 +233,13 @@
                         ?>
                       </div>
                       <!-- Nome -->
-                      <div class="col-md-8 d-flex align-items-center">
-                        <h3 class="team-member-name mb-0"><?php the_field('member_2_name'); ?></h3>
+                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
+                        <h3 class="team-member-name mb-2"><?php the_field('member_2_name'); ?></h3>
+                        <?php 
+                          if($linkedin_icon):
+                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
+                          endif;
+                        ?>
                       </div>
                     </div>
                     <!-- Bio -->
@@ -261,8 +272,13 @@
                         ?>
                       </div>
                       <!-- Nome -->
-                      <div class="col-md-8 d-flex align-items-center">
-                        <h3 class="team-member-name mb-0"><?php the_field('member_3_name'); ?></h3>
+                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
+                        <h3 class="team-member-name mb-2"><?php the_field('member_3_name'); ?></h3>
+                        <?php 
+                          if($linkedin_icon):
+                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
+                          endif;
+                        ?>
                       </div>
                     </div>
                     <!-- Bio -->
