@@ -142,20 +142,37 @@
           <p class="our-team-description"><?php the_field('our_team_subtitle');?></p>
           <p class="our-team-text"><?php the_field('our_team_text');?></p>
           <div class="our-team-images-wrapper">
-            <?php if(have_rows('our_team_images')): ?>
-              <div class="row justify-content-center">
-                <?php while(have_rows('our_team_images')): the_row(); 
-                  $imagem = get_sub_field('image');
-                  if($imagem): ?>
-                    <div class="col-lg-4 col-md-4 col-sm-12">
-                      <div class="our-team-image d-flex align-items-center justify-content-center">
-                        <?php echo wp_get_attachment_image($imagem['id'], 'full', false, ['class' => 'img-fluid']); ?>
-                      </div>
-                    </div>
-                  <?php endif; ?>
-                <?php endwhile; ?>
-              </div>
-            <?php endif; ?>
+            <div class="row justify-content-center">
+              <?php 
+                $member_1 = get_field('member_1');
+                $member_2 = get_field('member_2');
+                $member_3 = get_field('member_3');
+              ?>
+              
+              <?php if($member_1): ?>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                    <?php echo wp_get_attachment_image($member_1['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                  </div>
+                </div>
+              <?php endif; ?>
+              
+              <?php if($member_2): ?>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                    <?php echo wp_get_attachment_image($member_2['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                  </div>
+                </div>
+              <?php endif; ?>
+              
+              <?php if($member_3): ?>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                    <?php echo wp_get_attachment_image($member_3['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                  </div>
+                </div>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
       </section>
