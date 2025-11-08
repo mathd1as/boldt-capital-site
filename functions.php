@@ -32,6 +32,10 @@ function void_scripts()
 	$css_update_time = filemtime(get_stylesheet_directory()  . '/assets/css/app.min.css');
 	wp_enqueue_style('void-style', get_template_directory_uri() . '/assets/css/app.min.css', array('bootstrap-css'), $css_update_time);
 
+	// Team Modal Styles
+	$team_modal_css_time = filemtime(get_stylesheet_directory()  . '/assets/css/team-modal.css');
+	wp_enqueue_style('team-modal', get_template_directory_uri() . '/assets/css/team-modal.css', array('void-style'), $team_modal_css_time);
+
 	$js_update_time = filemtime(get_stylesheet_directory()  . '/assets/js/app.js');
 	wp_enqueue_script('app', get_template_directory_uri() . "/assets/js/app.js", $requirements, $js_update_time, true);
 }

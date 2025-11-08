@@ -151,7 +151,7 @@
               
               <?php if($member_1): ?>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal1" role="button">
                     <?php echo wp_get_attachment_image($member_1['id'], 'full', false, ['class' => 'img-fluid']); ?>
                   </div>
                 </div>
@@ -159,7 +159,7 @@
               
               <?php if($member_2): ?>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal2" role="button">
                     <?php echo wp_get_attachment_image($member_2['id'], 'full', false, ['class' => 'img-fluid']); ?>
                   </div>
                 </div>
@@ -167,13 +167,116 @@
               
               <?php if($member_3): ?>
                 <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center">
+                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal3" role="button">
                     <?php echo wp_get_attachment_image($member_3['id'], 'full', false, ['class' => 'img-fluid']); ?>
                   </div>
                 </div>
               <?php endif; ?>
             </div>
           </div>
+
+          <!-- Modal Member 1 -->
+          <?php if($member_1): ?>
+            <div class="modal fade" id="memberModal1" tabindex="-1" aria-labelledby="memberModal1Label">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content team-modal-content">
+                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-body p-4">
+                    <div class="row">
+                      <!-- Foto -->
+                      <div class="col-md-4">
+                        <?php 
+                          $member_1_photo = get_field('member_1_photo');
+                          if($member_1_photo):
+                            echo wp_get_attachment_image($member_1_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
+                          endif;
+                        ?>
+                      </div>
+                      <!-- Nome -->
+                      <div class="col-md-8 d-flex align-items-center">
+                        <h3 class="team-member-name mb-0"><?php the_field('member_1_name'); ?></h3>
+                      </div>
+                    </div>
+                    <!-- Bio -->
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <p class="team-member-bio"><?php the_field('member_1_bio'); ?></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+
+          <!-- Modal Member 2 -->
+          <?php if($member_2): ?>
+            <div class="modal fade" id="memberModal2" tabindex="-1" aria-labelledby="memberModal2Label">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content team-modal-content">
+                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-body p-4">
+                    <div class="row">
+                      <!-- Foto -->
+                      <div class="col-md-4">
+                        <?php 
+                          $member_2_photo = get_field('member_2_photo');
+                          if($member_2_photo):
+                            echo wp_get_attachment_image($member_2_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
+                          endif;
+                        ?>
+                      </div>
+                      <!-- Nome -->
+                      <div class="col-md-8 d-flex align-items-center">
+                        <h3 class="team-member-name mb-0"><?php the_field('member_2_name'); ?></h3>
+                      </div>
+                    </div>
+                    <!-- Bio -->
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <p class="team-member-bio"><?php the_field('member_2_bio'); ?></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+
+          <!-- Modal Member 3 -->
+          <?php if($member_3): ?>
+            <div class="modal fade" id="memberModal3" tabindex="-1" aria-labelledby="memberModal3Label">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content team-modal-content">
+                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-body p-4">
+                    <div class="row">
+                      <!-- Foto -->
+                      <div class="col-md-4">
+                        <?php 
+                          $member_3_photo = get_field('member_3_photo');
+                          if($member_3_photo):
+                            echo wp_get_attachment_image($member_3_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
+                          endif;
+                        ?>
+                      </div>
+                      <!-- Nome -->
+                      <div class="col-md-8 d-flex align-items-center">
+                        <h3 class="team-member-name mb-0"><?php the_field('member_3_name'); ?></h3>
+                      </div>
+                    </div>
+                    <!-- Bio -->
+                    <div class="row mt-4">
+                      <div class="col-12">
+                        <p class="team-member-bio"><?php the_field('member_3_bio'); ?></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endif; ?>
+
         </div>
       </section>
       <section class="our-portfolio">
