@@ -12,6 +12,8 @@ function void_scripts()
 	wp_enqueue_script('jquery');
 	$requirements = ['jquery'];
 
+	wp_enqueue_style('bootstrap-css', "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", array(), '5.1.3');
+	
 	wp_enqueue_style('Inter', "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 	wp_enqueue_style('Montserrat', "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
 
@@ -24,11 +26,11 @@ function void_scripts()
 	// wp_enqueue_script('fancybox', get_template_directory_uri() . "/assets/js/libs/fancybox/fancybox.umd.js", array(), '4.0.9', true);
 	// $requirements[] = 'fancybox';
 
-	// wp_enqueue_script('bootstrap', get_template_directory_uri() . "/assets/js/libs/bootstrap/bootstrap.min.js", array(), '5.0.0', true);
-	// $requirements[] = 'bootstrap';
+	wp_enqueue_script('bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js", array('jquery'), '5.1.3', true);
+	$requirements[] = 'bootstrap';
 
 	$css_update_time = filemtime(get_stylesheet_directory()  . '/assets/css/app.min.css');
-	wp_enqueue_style('void-style', get_template_directory_uri() . '/assets/css/app.min.css', array(), $css_update_time);
+	wp_enqueue_style('void-style', get_template_directory_uri() . '/assets/css/app.min.css', array('bootstrap-css'), $css_update_time);
 
 	$js_update_time = filemtime(get_stylesheet_directory()  . '/assets/js/app.js');
 	wp_enqueue_script('app', get_template_directory_uri() . "/assets/js/app.js", $requirements, $js_update_time, true);
