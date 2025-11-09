@@ -102,14 +102,52 @@
           <div class="row">
             <div class="col-lg-6">
               <h2><?php the_field('solutions_title');?></h2>
-              <p class="solutions-description"><?php the_field('solutions_description');?></p>
+              <?php
+                $texto = get_field('solutions_description'); // exemplo ACF
+                $palavra1 = 'climate';
+                $palavra2 = 'economic value.';
+
+                $texto_formatado = str_replace(
+                  $palavra1,
+                  '<span class="destaque">'.$palavra1.'</span>',
+                  $texto
+                );
+
+                $texto_formatado = str_replace(
+                  $palavra2,
+                  '<span class="destaque">'.$palavra2.'</span>',
+                  $texto_formatado
+                );
+
+              ?>
+              <p class="solutions-description"><?php echo $texto_formatado; ?></p>
             </div>
             <div class="col-lg-6">
               <div class="solutions-box-dialog-wrapper flex no">
-                <p class="solutions-box-dialog"><?php the_field('solutions_box_dialog_1');?></p>
+                <?php
+                  $texto = get_field('solutions_box_dialog_1');
+                  $palavra = 'proven solutions';
+
+                  $texto_formatado = str_replace(
+                    $palavra,
+                    '<span>'.$palavra.'</span>',
+                    $texto
+                  );
+                ?>
+                <p class="solutions-box-dialog"><?php echo $texto_formatado; ?></p>
               </div>
               <div class="solutions-box-dialog-wrapper flex">
-                <p class="solutions-box-dialog"><?php the_field('solutions_box_dialog_2');?></p>
+                <?php
+                  $texto = get_field('solutions_box_dialog_2');
+                  $palavra = 'ready to scale,';
+
+                  $texto_formatado = str_replace(
+                    $palavra,
+                    '<span>'.$palavra.'</span>',
+                    $texto
+                  );
+                ?>
+                <p class="solutions-box-dialog"><?php echo $texto_formatado; ?></p>
               </div>
             </div>
             <div class="col-lg-12">
