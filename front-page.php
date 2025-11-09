@@ -88,7 +88,7 @@
                       </div>
                     <?php endif; ?>
                     <?php if ($icon_description): ?>
-                      <p class="sector-icon-description text-center mt-2"><?php echo esc_html($icon_description); ?></p>
+                      <p class="sector-icon-description text-center mt-2"><?php echo $icon_description; ?></p>
                     <?php endif; ?>
                   </div>
                 <?php endwhile; ?>
@@ -156,6 +156,13 @@
                   <?php while (have_rows('solutions_icons')): the_row(); 
                     $logo = get_sub_field('icon');
                     $title = get_sub_field('title');
+                    
+                    $palavra = 'NBS';
+                    $title = str_replace(
+                      $palavra,
+                      'NBS<br>',
+                      $title
+                    );
                   ?>
                     <div class="col-lg-4 solution-icon-item">
                       <?php if ($logo): ?>
@@ -164,7 +171,7 @@
                         </div>
                       <?php endif; ?>
                       <?php if ($title): ?>
-                        <h3 class="solutions-logo-title"><?php echo esc_html($title); ?></h3>
+                        <h3 class="solutions-logo-title"><?php echo $title; ?></h3>
                       <?php endif; ?>
                     </div>
                   <?php endwhile; ?>

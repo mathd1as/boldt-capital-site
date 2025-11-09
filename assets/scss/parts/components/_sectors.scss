@@ -25,19 +25,22 @@
 
 .sector-icon-description {
   font-size: 16px;
-  font-weight: normal;
+  font-weight: bold;
   color: #FFFF;
   line-height: 18px;
+  span {
+    white-space: nowrap;
+    color: #FFFF;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+  }
 }
 
 .sector-icon-item {
   width: 112px;
   height: 112px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   padding: 10px;
   margin-top: 52px;  
 }
