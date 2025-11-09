@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     padding: 0 1rem;
   }
 
@@ -47,10 +47,24 @@
     height: 120px;
   }
 
+  .portfolio-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
   .portfolio-logo {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    transition: all 0.3s ease;
   }
 
   // Responsividade para mobile
@@ -108,7 +122,7 @@
     }
 
     .portfolio-logo-item {
-      margin-bottom: 1.5rem;
+      margin-bottom: 3rem;
     }
 
     .portfolio-logo-wrapper {

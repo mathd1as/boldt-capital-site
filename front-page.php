@@ -353,11 +353,14 @@
                 <?php if (have_rows('our_portfolio_logos')): ?>
                   <?php while (have_rows('our_portfolio_logos')): the_row(); 
                     $logo = get_sub_field('logo');
+                    $logo_link = get_sub_field('link');
                   ?>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-4 portfolio-logo-item">
                       <?php if ($logo): ?>
                         <div class="portfolio-logo-wrapper">
-                          <?php echo wp_get_attachment_image($logo['id'], 'medium', false, ['class' => 'portfolio-logo']); ?>
+                          <a href="<?php echo esc_url($logo_link); ?>" target="_blank" rel="noopener noreferrer" class="portfolio-logo-link">
+                            <?php echo wp_get_attachment_image($logo['id'], 'medium', false, ['class' => 'portfolio-logo']); ?>
+                          </a>
                         </div>
                       <?php endif; ?>
                     </div>
