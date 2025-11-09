@@ -184,7 +184,7 @@
                   <div class="modal-body p-4">
                     <div class="row">
                       <!-- Foto -->
-                      <div class="col-md-4">
+                      <div class="img-wrapper col-md-4">
                         <?php 
                           $linkedin_icon = get_field('modal_linkedin_icon');
                           $member_1_photo = get_field('member_1_photo');
@@ -224,7 +224,7 @@
                   <div class="modal-body p-4">
                     <div class="row">
                       <!-- Foto -->
-                      <div class="col-md-4">
+                      <div class="img-wrapper col-md-4">
                         <?php 
                           $member_2_photo = get_field('member_2_photo');
                           if($member_2_photo):
@@ -244,7 +244,7 @@
                     </div>
                     <!-- Bio -->
                     <div class="row mt-4">
-                      <div class="col-12">
+                      <div class="img-wrappercol-12">
                         <p class="team-member-bio"><?php the_field('member_2_bio'); ?></p>
                       </div>
                     </div>
@@ -263,7 +263,7 @@
                   <div class="modal-body p-4">
                     <div class="row">
                       <!-- Foto -->
-                      <div class="col-md-4">
+                      <div class="img-wrapper col-md-4">
                         <?php 
                           $member_3_photo = get_field('member_3_photo');
                           if($member_3_photo):
