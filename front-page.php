@@ -242,10 +242,13 @@
                       <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
                         <h3 class="team-member-name mb-2"><?php the_field('member_1_name'); ?></h3>
                         <?php 
+                          $member_1_linkedin_link = get_field('member_1_linkedin_link');
                           if($linkedin_icon):
-                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
-                          endif;
                         ?>
+                          <a href="<?php echo esc_url($member_1_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
+                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
+                          </a>
+                        <?php endif; ?>
                       </div>
                     </div>
                     <!-- Bio -->
@@ -281,10 +284,13 @@
                       <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
                         <h3 class="team-member-name mb-2"><?php the_field('member_2_name'); ?></h3>
                         <?php 
+                          $member_2_linkedin_link = get_field('member_2_linkedin_link');
                           if($linkedin_icon):
-                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
-                          endif;
                         ?>
+                          <a href="<?php echo esc_url($member_2_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
+                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
+                          </a>
+                        <?php endif; ?>
                       </div>
                     </div>
                     <!-- Bio -->
@@ -320,10 +326,13 @@
                       <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
                         <h3 class="team-member-name mb-2"><?php the_field('member_3_name'); ?></h3>
                         <?php 
+                          $member_3_linkedin_link = get_field('member_3_linkedin_link');
                           if($linkedin_icon):
-                            echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']);
-                          endif;
                         ?>
+                          <a href="<?php echo esc_url($member_3_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
+                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
+                          </a>
+                        <?php endif; ?>
                       </div>
                     </div>
                     <!-- Bio -->
