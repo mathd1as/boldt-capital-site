@@ -10,19 +10,13 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="page" class="site">
+    <button class="contato">Abrir Contato</button>
 
-	<div id="page" class="site">
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn">&times;</button>
+        <h2>Conteúdo da Sidebar</h2>
+        <p>Este é o conteúdo da sua sidebar. Você pode adicionar o que quiser aqui.</p>
+    </div>
 
-		<header id="masthead" class="site-header">
-			<div class="nav-wrapper container">
-			</div>
-			<div class="mobile-nav container-lg px-5 overflow-hidden d-flex flex-column">
-				<nav>
-					<?php wp_nav_menu([
-						'theme_location' => 'primary-menu',
-						'container' => '',
-						'menu_class' => 'menu w-100 h-100 d-flex flex-column'
-					]) ?>
-				</nav>
-			</div>
-		</header>
+    <div class="overlay"></div>

@@ -38,6 +38,10 @@ function void_scripts()
 
 	$js_update_time = filemtime(get_stylesheet_directory()  . '/assets/js/app.js');
 	wp_enqueue_script('app', get_template_directory_uri() . "/assets/js/app.js", $requirements, $js_update_time, true);
+
+	// Custom sidebar script
+	$sidebar_script_time = filemtime(get_stylesheet_directory()  . '/script.js');
+	wp_enqueue_script('sidebar-script', get_template_directory_uri() . "/script.js", array('jquery'), $sidebar_script_time, true);
 }
 add_action('wp_enqueue_scripts', 'void_scripts');
 
