@@ -8,11 +8,13 @@ jQuery(document).ready(function($) {
     function openSidebar() {
         sidebar.classList.add('open');
         overlay.classList.add('active');
+        contatoBtn.classList.add('hidden');
     }
 
     function closeSidebar() {
         sidebar.classList.remove('open');
         overlay.classList.remove('active');
+        contatoBtn.classList.remove('hidden');
     }
 
     contatoBtn.addEventListener('click', openSidebar);

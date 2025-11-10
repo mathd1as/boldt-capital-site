@@ -52,23 +52,44 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   background-color: #44B72C;
   color: #FFFFFF;
   border: none;
-  border-radius: 30px;
+  border-radius: 50%;
   z-index: 1001;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  visibility: visible;
   transition: all 0.3s ease;
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: #FFFFFF;
+  }
+  
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+  }
 }
 
 .contato:hover {
   background-color: #3a9b25;
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  
+  &.hidden {
+    transform: scale(0.8);
+  }
 }
 
 // Responsivo para mobile
@@ -76,7 +97,13 @@
   .contato {
     top: 15px;
     right: 15px;
-    padding: 10px 20px;
-    font-size: 14px;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
