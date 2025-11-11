@@ -16,6 +16,16 @@
   right: 0; /* Mostra a sidebar */
 }
 
+.menu-item{
+  padding: 20px;
+  &:not(:last-child) {
+    border-bottom: solid 1px #cecece;
+  }
+  a {
+    color: black;
+  }
+}
+
 .sidebar .close-btn {
   position: absolute;
   top: 0;

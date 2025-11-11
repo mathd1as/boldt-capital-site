@@ -27,7 +27,7 @@
 				$footer_linkedin_link = get_field('footer_linkedin_link');	
 			?>
 		<p class="contact-info"><?php echo esc_html($footer_number); ?></p>
-		<p class="contact-info"><?php echo esc_html($footer_email); ?></p>
+		<a href="mailto:<?php echo esc_html($footer_email); ?>" class="contact-info mb-3 d-block"><?php echo esc_html($footer_email); ?></a>
 		<p class="contact-info">
 			<?php if ($footer_linkedin_link): ?>
 				<a href="<?php echo esc_url($footer_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">

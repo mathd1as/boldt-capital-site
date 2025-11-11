@@ -8,6 +8,14 @@
     font-weight: bold;
     color: #F2EAE8;
     margin-bottom: 17px;
+    @include media-breakpoint-down(lg) {
+      font-size: 72px;
+      line-height: 80px;
+    }
+    @include media-breakpoint-down(md) {
+      font-size: 56px;
+      line-height: 56px;
+    }
   }
 }
 
@@ -37,10 +45,17 @@
   }
 }
 
-.sector-icon-item {
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  padding: 10px;
-  margin-top: 52px;  
+.sectors-icons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 90px;
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
 }

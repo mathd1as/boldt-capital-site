@@ -22,8 +22,13 @@
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
         <button class="close-btn">&times;</button>
-        <h2>Conteúdo da Sidebar</h2>
-        <p>Este é o conteúdo da sua sidebar. Você pode adicionar o que quiser aqui.</p>
+        <nav>
+            <?php wp_nav_menu([
+                'theme_location' => 'primary-menu',
+                'container' => '',
+                'menu_class' => 'menu mt-4 w-100 h-100 d-flex flex-column',
+            ]) ?>
+        </nav>
     </div>
 
     <!-- Overlay -->

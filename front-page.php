@@ -8,9 +8,9 @@
         $we_are_boldt_background = get_field('we_are_boldt_background');
         $hero_logo = get_field('hero_logo');
       ?>
-      <section class="hero flex-column" style="background-image: url('<?php echo $hero_background['url'];?>');">
+      <section id="hero" class="hero flex-column" style="background-image: url('<?php echo $hero_background['url'];?>');">
         <?php 
-          echo wp_get_attachment_image($hero_logo['id'], 'full');
+          echo wp_get_attachment_image($hero_logo['id'], 'full', false, ['class' => 'px-5 px-lg-0']);
         ?>
         <button class="hero-button">
           <a href="<?php the_field('hero_button_link');?>">
@@ -18,7 +18,7 @@
           </a>
         </button>
       </section>
-      <section class="about-us">
+      <section id="about-us" class="about-us">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </section>
-      <section class="we-are-boldt flex-column" style="background-image: url('<?php echo $we_are_boldt_background['url'];?>');">
+      <section id="we-are-boldt" class="we-are-boldt flex-column" style="background-image: url('<?php echo $we_are_boldt_background['url'];?>');">
         <div class="container">
           <div class="row">
             <div class="col-lg-8">
@@ -47,9 +47,9 @@
           </div>
         </div>
       </section>
-      <section class="strategy">
+      <section id="strategy" class="strategy">
         <div class="container">
-          <div class="row">
+          <div class="row align-items-center">
             <div class="col-lg-6">
               <h2><?php the_field('strategy_title');?></h2>
               <p class="strategy-text"><?php the_field('strategy_text');?></p>
@@ -64,7 +64,7 @@
           </div>
         </div>
       </section>
-      <section class="sectors">
+      <section id="sectors" class="sectors">
         <div class="container">
           <div class="row">
             <div class="col-lg-4">
@@ -75,13 +75,13 @@
             <p class="sector-text"><?php the_field('sector_text');?></p>
           </div>
           <div class="col-lg-12">
-            <div class="sectors-icons-wrapper d-flex flex-nowrap justify-content-between align-items-start">
+            <div class="sectors-icons-wrapper">
               <?php if (have_rows('sectors_icons')): ?>
                 <?php while (have_rows('sectors_icons')): the_row(); 
                   $icon_logo = get_sub_field('sectors_icon_logo');
                   $icon_description = get_sub_field('sectors_icon_description');
                 ?>
-                  <div class="sector-icon-item">
+                  <div>
                     <?php if ($icon_logo): ?>
                       <div class="sector-icon-image-wrapper d-flex align-items-start justify-content-center" style="height: 112px;">
                         <?php echo wp_get_attachment_image($icon_logo['id'], 'full', false, ['class' => 'sector-icon', 'width' => '112', 'height' => '112']); ?>
@@ -97,7 +97,7 @@
           </div>
         </div>
       </section>
-      <section class="solutions">
+      <section id="solutions" class="solutions">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
@@ -181,7 +181,7 @@
           </div>
         </div>
       </section>
-      <section class="our-team">
+      <section id="our-team" class="our-team">
         <div class="container">
           <h2><?php the_field('our_team_title');?></h2>
           <p class="our-team-description"><?php the_field('our_team_subtitle');?></p>
@@ -349,7 +349,7 @@
 
         </div>
       </section>
-      <section class="our-portfolio">
+      <section id="our-portfolio" class="our-portfolio">
         <div class="container">
           <div class="row">
             <div class="col-lg-6">
