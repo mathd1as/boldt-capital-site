@@ -52,7 +52,7 @@
 				<?php 
 					$boldt_copyright = get_field('boldt_copyright');	
 				?>
-				<p class="footer-copyright"><?php echo esc_html($boldt_copyright); ?></p>
+				<p class="footer-copyright"><?php echo $boldt_copyright; ?></p>
 			</div>
 		</div>
 	</div>
