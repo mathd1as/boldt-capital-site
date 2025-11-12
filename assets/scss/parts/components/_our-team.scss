@@ -138,14 +138,12 @@
   text-align: left;
 }
 
-// LinkedIn Icon
-.linkedin-icon {
-  width: 33px;
-  height: 33px;
-  border-radius: 0 !important;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+a.pseudo-linkedin {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  width: 52px;
+  height: 52px;
 }
 
 a:hover .linkedin-icon {

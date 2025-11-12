@@ -196,13 +196,13 @@
                   $linkedin = get_sub_field('linkedin');
                   $biography = get_sub_field('biography');
                 ?>
-                  <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal<?php echo $count; ?>" role="button">
+                  <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center justify-content-center flex-column">
+                  <div class="our-team-image position-relative" data-bs-toggle="modal" data-bs-target="#memberModal<?php echo $count; ?>" role="button">
                     <?php echo wp_get_attachment_image($photo['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                    <a class="pseudo-linkedin" href="<?php echo $linkedin; ?>">
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/linkedin_icon.png" alt="LinkedIn">
+                    </a>
                   </div>
-                  <a href="<?php echo $linkedin; ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
-                  </a>
                   <p class="team-member-name-display"><?php echo $name; ?></p>
                   </div>
                   <div class="modal fade" id="memberModal<?php echo $count; ?>" tabindex="-1" aria-labelledby="memberModal<?php echo $count; ?>Label">
