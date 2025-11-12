@@ -19,14 +19,16 @@
 				<?php endif; ?>
 			</div>
 			<div class="col-lg-3">
-			<h3 class="contact-info-title">Let's talk</h3>
-			<?php 
-				$footer_number = get_field('footer_number');
-				$footer_email = get_field('footer_email');
-				$footer_linkedin = get_field('footer_linkedin');
-				$footer_linkedin_link = get_field('footer_linkedin_link');	
-			?>
-		<p class="contact-info"><?php echo esc_html($footer_number); ?></p>
+		<h3 class="contact-info-title">Let's talk</h3>
+		<?php 
+			$footer_number = get_field('footer_number');
+			// Remove todos os caracteres exceto números e o sinal +
+			$footer_number_clean = preg_replace('/[^0-9+]/', '', $footer_number);
+			$footer_email = get_field('footer_email');
+			$footer_linkedin = get_field('footer_linkedin');
+			$footer_linkedin_link = get_field('footer_linkedin_link');	
+		?>
+	<a href="tel:<?php echo esc_attr($footer_number_clean); ?>" class="contact-info"><?php echo esc_html($footer_number); ?></a>
 		<a href="mailto:<?php echo esc_html($footer_email); ?>" class="contact-info mb-3 d-block"><?php echo esc_html($footer_email); ?></a>
 		<p class="contact-info">
 			<?php if ($footer_linkedin_link): ?>
