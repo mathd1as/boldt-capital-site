@@ -188,164 +188,65 @@
           <p class="our-team-text"><?php the_field('our_team_text');?></p>
           <div class="our-team-images-wrapper">
             <div class="row justify-content-center">
-              <?php 
-                $member_1 = get_field('member_1');
-                $member_2 = get_field('member_2');
-                $member_3 = get_field('member_3');
-              ?>
-              
-              <?php if($member_1): ?>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal1" role="button">
-                    <?php echo wp_get_attachment_image($member_1['id'], 'full', false, ['class' => 'img-fluid']); ?>
+             <?php if (have_rows('team')): ?>
+              <?php $count = 0; ?>
+                <?php while (have_rows('team')): the_row();
+                  $photo = get_sub_field('photo');
+                  $name = get_sub_field('name');
+                  $linkedin = get_sub_field('linkedin');
+                  $biography = get_sub_field('biography');
+                ?>
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal<?php echo $count; ?>" role="button">
+                    <?php echo wp_get_attachment_image($photo['id'], 'full', false, ['class' => 'img-fluid']); ?>
                   </div>
-                </div>
-              <?php endif; ?>
-              
-              <?php if($member_2): ?>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal2" role="button">
-                    <?php echo wp_get_attachment_image($member_2['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                  <a href="<?php echo $linkedin; ?>">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/linkedin_icon.png" alt="LinkedIn" class="linkedin-icon">
+                  </a>
+                  <p class="team-member-name-display"><?php echo $name; ?></p>
                   </div>
-                </div>
-              <?php endif; ?>
-              
-              <?php if($member_3): ?>
-                <div class="col-lg-4 col-md-4 col-sm-12">
-                  <div class="our-team-image d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#memberModal3" role="button">
-                    <?php echo wp_get_attachment_image($member_3['id'], 'full', false, ['class' => 'img-fluid']); ?>
+                  <div class="modal fade" id="memberModal<?php echo $count; ?>" tabindex="-1" aria-labelledby="memberModal<?php echo $count; ?>Label">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content team-modal-content">
+                        <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-body p-4">
+                          <div class="row">
+                            <!-- Foto -->
+                            <div class="img-wrapper col-md-4">
+                              <?php 
+                                $linkedin_icon = get_field('modal_linkedin_icon');
+                                if($photo):
+                                  echo wp_get_attachment_image($photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
+                                endif;
+                              ?>
+                            </div>
+                            <!-- Nome -->
+                            <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
+                              <h3 class="team-member-name mb-2"><?php echo $name; ?></h3>
+                              <?php 
+                                $linkedin = get_field('linkedin');
+                                if($linkedin_icon):
+                              ?>
+                                <a href="<?php echo esc_url($linkedin); ?>" target="_blank" rel="noopener noreferrer">
+                                  <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
+                                </a>
+                              <?php endif; ?>
+                            </div>
+                          </div>
+                          <!-- Bio -->
+                          <div class="row mt-4">
+                            <div class="col-12">
+                              <p class="team-member-bio"><?php echo $biography; ?></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                <?php $count++; endwhile; ?>
               <?php endif; ?>
             </div>
           </div>
-
-          <!-- Modal Member 1 -->
-          <?php if($member_1): ?>
-            <div class="modal fade" id="memberModal1" tabindex="-1" aria-labelledby="memberModal1Label">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content team-modal-content">
-                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  <div class="modal-body p-4">
-                    <div class="row">
-                      <!-- Foto -->
-                      <div class="img-wrapper col-md-4">
-                        <?php 
-                          $linkedin_icon = get_field('modal_linkedin_icon');
-                          $member_1_photo = get_field('member_1_photo');
-                          if($member_1_photo):
-                            echo wp_get_attachment_image($member_1_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
-                          endif;
-                        ?>
-                      </div>
-                      <!-- Nome -->
-                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
-                        <h3 class="team-member-name mb-2"><?php the_field('member_1_name'); ?></h3>
-                        <?php 
-                          $member_1_linkedin_link = get_field('member_1_linkedin_link');
-                          if($linkedin_icon):
-                        ?>
-                          <a href="<?php echo esc_url($member_1_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
-                          </a>
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                    <!-- Bio -->
-                    <div class="row mt-4">
-                      <div class="col-12">
-                        <p class="team-member-bio"><?php the_field('member_1_bio'); ?></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <?php endif; ?>
-
-          <!-- Modal Member 2 -->
-          <?php if($member_2): ?>
-            <div class="modal fade" id="memberModal2" tabindex="-1" aria-labelledby="memberModal2Label">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content team-modal-content">
-                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  <div class="modal-body p-4">
-                    <div class="row">
-                      <!-- Foto -->
-                      <div class="img-wrapper col-md-4">
-                        <?php 
-                          $member_2_photo = get_field('member_2_photo');
-                          if($member_2_photo):
-                            echo wp_get_attachment_image($member_2_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
-                          endif;
-                        ?>
-                      </div>
-                      <!-- Nome -->
-                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
-                        <h3 class="team-member-name mb-2"><?php the_field('member_2_name'); ?></h3>
-                        <?php 
-                          $member_2_linkedin_link = get_field('member_2_linkedin_link');
-                          if($linkedin_icon):
-                        ?>
-                          <a href="<?php echo esc_url($member_2_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
-                          </a>
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                    <!-- Bio -->
-                    <div class="row mt-4">
-                      <div class="img-wrappercol-12">
-                        <p class="team-member-bio"><?php the_field('member_2_bio'); ?></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <?php endif; ?>
-
-          <!-- Modal Member 3 -->
-          <?php if($member_3): ?>
-            <div class="modal fade" id="memberModal3" tabindex="-1" aria-labelledby="memberModal3Label">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content team-modal-content">
-                  <button type="button" class="btn-close team-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  <div class="modal-body p-4">
-                    <div class="row">
-                      <!-- Foto -->
-                      <div class="img-wrapper col-md-4">
-                        <?php 
-                          $member_3_photo = get_field('member_3_photo');
-                          if($member_3_photo):
-                            echo wp_get_attachment_image($member_3_photo['id'], 'medium', false, ['class' => 'img-fluid rounded']);
-                          endif;
-                        ?>
-                      </div>
-                      <!-- Nome -->
-                      <div class="col-md-8 d-flex flex-column justify-content-center align-items-start">
-                        <h3 class="team-member-name mb-2"><?php the_field('member_3_name'); ?></h3>
-                        <?php 
-                          $member_3_linkedin_link = get_field('member_3_linkedin_link');
-                          if($linkedin_icon):
-                        ?>
-                          <a href="<?php echo esc_url($member_3_linkedin_link); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php echo wp_get_attachment_image($linkedin_icon['id'], 'full', false, ['class' => 'linkedin-icon', 'style' => 'width: 33px; height: 33px;']); ?>
-                          </a>
-                        <?php endif; ?>
-                      </div>
-                    </div>
-                    <!-- Bio -->
-                    <div class="row mt-4">
-                      <div class="col-12">
-                        <p class="team-member-bio"><?php the_field('member_3_bio'); ?></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <?php endif; ?>
 
         </div>
       </section>
