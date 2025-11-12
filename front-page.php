@@ -199,7 +199,7 @@
                   <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center justify-content-center flex-column">
                   <div class="our-team-image position-relative" data-bs-toggle="modal" data-bs-target="#memberModal<?php echo $count; ?>" role="button">
                     <?php echo wp_get_attachment_image($photo['id'], 'full', false, ['class' => 'img-fluid']); ?>
-                    <a class="pseudo-linkedin" href="<?php echo $linkedin; ?>">
+                    <a class="pseudo-linkedin" href="<?php echo $linkedin; ?>" target="_blank"> 
                       <img src="<?php echo get_template_directory_uri(); ?>/assets/img/linkedin_icon.png" alt="LinkedIn">
                     </a>
                   </div>
