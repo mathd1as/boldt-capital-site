@@ -49,13 +49,19 @@
 			</div>
 		</div>
 		<hr class="footer-divider">
-		<div>
-			<div class="col-lg-12">
+		<div class="row">
+			<div class="col-lg-6">
 				<?php 
 					$boldt_copyright = get_field('boldt_copyright');	
 				?>
 				<p class="footer-copyright"><?php echo $boldt_copyright; ?></p>
 			</div>
+		<div class="col-lg-6 text-end">
+			<?php
+			$footer_logo = get_field('footer_selos');
+				echo wp_get_attachment_image($footer_logo['id'], 'full');
+			?>
+		</div>
 		</div>
 	</div>
 </footer>
